@@ -9,7 +9,7 @@
          <div class="hero__content-wrapper">
             <img class="hero-purple" src="../../assets/img/hero/hero-2/hero2.svg" alt="">
             <div class="hero__content-flex">
-               <div class="left-col p-relative">
+               <div class="d-none d-md-block left-col p-relative">
                   <div class="hero__promotion d-none d-sm-flex white-bg layer" data-depth="0.1">
                      <div class="hero__promotion-icon inspiration mr-10">
                         <span>

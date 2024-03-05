@@ -425,7 +425,7 @@
     column-gap: 1.5rem;
     animation: fadeInUp 1s ease-in-out;
     @media #{$md} {
-      top: 40% !important;
+      top: 30% !important;
       right: 38%;
       width: 450px;
     }
@@ -437,7 +437,7 @@
     @media #{$xs} {
       left: 50% !important;
       transform: translate(50%, -50%);
-      top: 35% !important;
+      top: 37% !important;
       column-gap: .5rem;
       width: 95%;
     }
@@ -653,9 +653,9 @@
     width: 100%;
   }
   @media #{$sm} {
-    width: 100%;
+    width: 65%;
     top: 8%;
-    left: 5%;
+    left: 20%;
   }
   @media #{$md} {
     width: 100%;

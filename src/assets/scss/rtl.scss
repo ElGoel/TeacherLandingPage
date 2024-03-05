@@ -129,19 +129,19 @@ body {
     right: auto;
 	left: 10%;
 }
-.link-btn:hover img:first-child {
+.link-btn:hover img:first-child, i:first-child {
 	right: auto;
     left: 0;
 }
-.link-btn img:first-child {
+.link-btn img:first-child, i:first-child {
 	left: 10%;
     right: auto;
 }
-.link-btn img:last-child {
+.link-btn img:last-child, i:last-child {
 	right: auto;
     left: 0px;
 }
-.link-btn:hover img:last-child {
+.link-btn:hover img:last-child, i:last-child {
     left: -10%;
 	right: auto;
 }
@@ -150,7 +150,6 @@ body {
 }
 .link-btn {
 	padding-left: 21px;
-    padding-right: 0;
 }
 .banner__thumb {
 	right: auto;

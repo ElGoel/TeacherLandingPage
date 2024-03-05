@@ -49,6 +49,7 @@
     }
   }
   &__thumb {
+    border-radius: 25px;
     &-list {
       @media #{$lg} {
         height: 100%;
@@ -1239,8 +1240,6 @@
       left: 50%;
       @include transform(translate(-50%, -50%));
       z-index: 1;
-    }
-    &-meta {
     }
     &-price {
       & h5 {

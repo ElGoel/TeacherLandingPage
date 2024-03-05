@@ -3,7 +3,7 @@
       <div class="container">
          <div>
             <div class="section__title-wrapper mb-60">
-               <h2 class="section__title text-center m-4">Our Popular <span class="yellow-bg yellow-bg-big">Courses</span>
+               <h2 class="section__title text-center m-4">Our Popular Courses
                </h2>
                <p class="text-center">Discover some of the many benefits you will enjoy when you
                   <br> add us to your online learning platform

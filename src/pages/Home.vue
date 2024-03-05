@@ -3,19 +3,17 @@
     <div class="hero-container">
         <img src="../assets/img/hero/hero-2/heroBackground.png" alt="Imagen de Fondo" class="hero-background">
         <HeroArea @HandleMouseMove="handleMouseMove" />
-        <div style="width: 100%; height: 200px;"></div>
+        <div class="d-none d-md-block" style="width: 100%; height: 200px;"></div>
         <AboutArea />
         <CounterStats />
     </div>
     <Courses />
-    <WhatArea />
     <WhyArea />
     <Counter />
-    <Testimonial />
+    <Blog />
     <div class="hero-container">
-        <Blog />
+        <Testimonial />
         <img src="../assets/img/footer/backgroundFooter.png" alt="footer background image" class="footer__background">
-        <Cta />
         <Footer footerPadding="true" />
     </div>
 </template>
@@ -26,11 +24,10 @@ import HeroArea from '../components/Home/HeroArea.vue';
 // import Services from '../components/Home/Services.vue';
 import AboutArea from '../components/common/AboutArea.vue';
 import Courses from '../components/Home/Course.vue';
-import WhatArea from '../components/Home/WhatArea.vue';
+// import WhatArea from '../components/Home/WhatArea.vue';
 import WhyArea from '../components/Home/WhyArea.vue';
 import Testimonial from '../components/Home/Testimonial.vue';
 import Blog from '../components/Home/Blog.vue';
-import Cta from '@/components/Home/Cta.vue';
 import Footer from '../components/Home/Footer.vue';
 import CounterStats from '@/components/Home/CounterStats.vue';
 

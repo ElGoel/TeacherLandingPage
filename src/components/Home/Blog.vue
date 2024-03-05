@@ -1,12 +1,11 @@
 <template>
     <section class="blog__area pt-115 pb-130">
-        <div class="container">
+        <div class="container blog__area-container">
             <div class="row">
                 <div class="col-xxl-6 offset-xxl-3">
                     <div class="section__title-wrapper text-center mb-60">
-                        <h2 class="section__title">We share <br>
-                            Our <span class="yellow-bg yellow-bg-big">thoughts</span>on design</h2>
-                        <p>You don't have to struggle alone, you've got our assistance and help.</p>
+                        <h2 class="section__title text-center">My Blog</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur aut repellat quidem</p>
                     </div>
                 </div>
             </div>

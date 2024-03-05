@@ -4,230 +4,326 @@
 /*  16. TESTIMONIAL CSS START
 /*----------------------------------------*/
 
-.testimonial{
-    &__area{
-        @include background();
+.testimonial {
+  &__overlay {
+    position: relative;
+    &::after {
+      position: absolute;
+      content: '';
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
     }
-    &__overlay{
-        position: relative;
-        &::after{
-            position: absolute;
-            content: '';
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba($color: $e-blue, $alpha: .84);
-        }
+  }
+  &__container {
+    background: linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(232, 228, 255, 0) 5%,
+      rgba(110, 85, 255, 1) 50%,
+      rgba(235, 231, 255, 0) 95%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    border-radius: 5rem;
+    width: 60%;
+    @media #{$md} {
+      width: 100%;
     }
-    &__slider{
-        & .swiper-nav{
-            & i{
-                display: inline-block;
-                font-size: 14px;
-                width: 50px;
-                height: 50px;
-                line-height: 46px;
-                text-align: center;
-                @include border-radius(50%);
-                border: 2px solid rgba($color: $white, $alpha: .2);
-                background: transparent;
-                color: $white;
-                &:hover{
-                    background: $white;
-                    border-color: $white;
-                    color: $e-blue;
-                }
-            }
-            &::after{
-                display: none;
-            }
-        }
-        &-3{
-            & .testimonial-nav{
-                width: 290px;
-                & .swiper-slide{
-                    width: 70px;
-                    & img{
-                        width: 70px;
-                        height: 70px;
-                        @include border-radius(50%);
-                    }
-
-                    &.swiper-slide-thumb-active{
-                        & .testimonial__nav-thumb{
-                            &::after{
-                                border-color: rgba($color: $white, $alpha: .3);
-                            }
-                        }
-                    }
-                }
-            }
-            & .swiper-container{
-                margin-left: inherit;
-                margin-right: inherit;
-            }
-        }
+    @media #{$sm} {
+      width: 100%;
     }
-    &__nav{
-        &-thumb{
-            position: relative;
+    @media #{$xs} {
+      width: 100%;
+    }
+  }
+  &__slider {
+    background-color: $white;
+    border-radius: inherit;
+    border: 3px solid transparent;
+    background-clip: padding-box;
+    padding: 1.5rem 0rem;
+    & .swiper-nav {
+      & i {
+        display: inline-block;
+        font-size: 14px;
+        width: 50px;
+        height: 50px;
+        line-height: 46px;
+        text-align: center;
+        @include border-radius(50%);
+        border: 2px solid rgba($color: $black, $alpha: 0.2);
+        background: transparent;
+        color: $black;
+        &:hover {
+          background: $black;
+          border-color: $black;
+          color: $e-blue;
+        }
+      }
+      &::after {
+        display: none;
+      }
+    }
+    &-3 {
+      & .testimonial-nav {
+        width: 290px;
+        & .swiper-slide {
+          width: 70px;
+          & img {
             width: 70px;
             height: 70px;
-            margin: 10px;
-            margin-top: 45px;
-            &::after{
-                position: absolute;
-                content: '';
-                left: -10px;
-                top: -10px;
-                width: calc(100% + 20px);
-                height: calc(100% + 20px);
-                border: 1px solid transparent;
-                @include border-radius(50%);
-            }
-        }
-    }
-    &__item{
-        &-3{
-            & p{
-                font-size: 24px;
-                line-height: 40px;
-                color: $white;
-            }
-        }
-    }
-    &__title{
-        font-size: 40px;
-        color: $white;
-    }
-    &__thumb{
-        margin-bottom: 30px;    
-        & img{
-            width: 80px;
-            height: 80px;
             @include border-radius(50%);
-        }
-        &-3{
-            height: 300px;
-            width: 100%;
-            & iframe{
-                width: 100%;
-                height: 100%;
-            }
-        }
-    }
-    &__content{
-        & p{
-            font-size: 30px;
-            color: $white;
-            line-height: 44px;
-            font-weight: 500;
-            padding: 0 290px;
-            margin-bottom: 10px;
+          }
 
-            @media #{$lg}{
-                padding: 0 150px;
+          &.swiper-slide-thumb-active {
+            & .testimonial__nav-thumb {
+              &::after {
+                border-color: rgba($color: $black, $alpha: 0.3);
+              }
             }
-            @media #{$md}{
-                padding: 0 80px;
-            }
-            @media #{$sm}{
-                padding: 0 80px;
-            }
-            @media #{$xs}{
-                font-size: 20px;
-                line-height: 33px;
-                padding: 0 80px;
-            }
+          }
         }
+      }
+      & .swiper-container {
+        margin-left: inherit;
+        margin-right: inherit;
+      }
     }
-    &__info{
-        & h4{
-            font-size: 20px;
-            color: $white;
-            margin-bottom: 0;
-        }
-        & span{
-            font-size: 14px;
-            color: $white;
-            opacity: .7;
-        }
-        &-2{
-            & h4{
-                font-size: 22px;
-                color: $white;
-                display: inline-block;
-            }
-            & span{
-                font-size: 18px;
-                color: $grey-6;
-            }
-        }
+  }
+  &__nav {
+    &-thumb {
+      position: relative;
+      width: 70px;
+      height: 70px;
+      margin: 10px;
+      margin-top: 45px;
+      &::after {
+        position: absolute;
+        content: '';
+        left: -10px;
+        top: -10px;
+        width: calc(100% + 20px);
+        height: calc(100% + 20px);
+        border: 1px solid transparent;
+        @include border-radius(50%);
+      }
     }
-    &__video{
-        @include border-radius(6px);
-        @include box-shadow(0px 30px 70px 0px rgba(0, 32, 29, 0.14));
+  }
+  &__item {
+    &-3 {
+      & p {
+        font-size: 24px;
+        line-height: 40px;
+        color: $e-blue-3;
+      }
+    }
+  }
+  &__title {
+    font-size: 40px;
+    color: $black;
+  }
+  &__thumb {
+    margin-bottom: 30px;
+    & img {
+      @include border-radius(50%);
+      border: solid 5px $e-purple-1;
+    }
+  }
+  &__thumbAb {
+    @media #{$sm} {
+      display: none;
+    }
+    @media #{$xs, $md} {
+      display: none;
+    }
+    &-1 {
+      position: absolute;
+      top: 35%;
+      right: 20%;
+      width: 90px;
+      height: 90px;
+      border: solid 5px yellow;
+      animation-duration: 5s !important;
+    }
+    &-2 {
+      position: absolute;
+      top: 55%;
+      right: 15%;
+      width: 70px;
+      height: 70px;
+      border: solid 5px green;
+      animation-duration: 6s !important;
+    }
+    &-3 {
+      position: absolute;
+      top: 70%;
+      right: 23%;
+      width: 80px;
+      height: 80px;
+      border: solid 5px $e-brown;
+      animation-duration: 4.3s !important;
+    }
+    &-4 {
+      position: absolute;
+      top: 35%;
+      left: 20%;
+      width: 90px;
+      height: 90px;
+      border: solid 5px $e-orange;
+      animation-duration: 4s !important;
+    }
+    &-5 {
+      position: absolute;
+      top: 55%;
+      left: 15%;
+      width: 70px;
+      height: 70px;
+      border: solid 5px $e-pink-2;
+      animation-duration: 2.6s !important;
+    }
+    &-6 {
+      position: absolute;
+      top: 70%;
+      left: 23%;
+      width: 80px;
+      height: 80px;
+      border: solid 5px $e-skyblue-2;
+      animation-duration: 3s !important;
+    }
+    & img {
+      @include border-radius(50%);
+      overflow: hidden;
+      transform: translatey(0px);
+      animation: float ease-in-out infinite;
+    }
+  }
+  &__content {
+    & p {
+      font-size: 20px;
+      color: $e-text-5;
+      line-height: 44px;
+      font-weight: 500;
+      padding: 0 100px;
+      margin-bottom: 10px;
 
-        @media #{$md}{
-            margin-left: 0;
-            margin-top: 50px;
-        }
-        @media #{$sm}{
-            margin-left: 0;
-            margin-top: 50px;
-        }
-        @media #{$xs}{
-            margin-left: 0;
-            margin-top: 50px;
-        }
-        &-icon{
-            & span{
-                display: inline-block;
-                width: 60px;
-                height: 60px;
-                line-height: 60px;
-                @include border-radius(50%);
-                background: $e-skyblue;
-                text-align: center;
-            }
-            & svg{
-                width: 22px;
-                height: 22px;
-                & .st0{
-                    fill:none;
-                    stroke:#FFFFFF;
-                    stroke-width:2;
-                    stroke-linecap:round;
-                    stroke-linejoin:round;
-                }
-            }
-        }
-        &-content{
-            background: $white;
-            padding: 30px 40px;
-            padding-right: 50px;
-            padding-bottom: 60px;
-        }
-        &-text{
-            & h4{
-                font-size: 26px;
-            }
-            & p{
-                color: $e-text-4;
-                margin-bottom: 0;
-            }
-        }
+      @media #{$lg} {
+        padding: 0 150px;
+      }
+      @media #{$md} {
+        padding: 0 80px;
+      }
+      @media #{$sm} {
+        padding: 0 80px;
+      }
+      @media #{$xs} {
+        font-size: 20px;
+        line-height: 33px;
+        padding: 0 80px;
+      }
     }
+  }
+  &__info {
+    & h4 {
+      font-size: 20px;
+      color: $black;
+      margin-bottom: 0;
+    }
+    & span {
+      font-size: 14px;
+      color: $black;
+      opacity: 0.7;
+    }
+    &-2 {
+      & h4 {
+        font-size: 22px;
+        color: $black;
+        display: inline-block;
+      }
+      & span {
+        font-size: 18px;
+        color: $grey-6;
+      }
+    }
+  }
+  &__video {
+    @include border-radius(6px);
+    @include box-shadow(0px 30px 70px 0px rgba(0, 32, 29, 0.14));
+
+    @media #{$md} {
+      margin-left: 0;
+      margin-top: 50px;
+    }
+    @media #{$sm} {
+      margin-left: 0;
+      margin-top: 50px;
+    }
+    @media #{$xs} {
+      margin-left: 0;
+      margin-top: 50px;
+    }
+    &-icon {
+      & span {
+        display: inline-block;
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+        @include border-radius(50%);
+        background: $e-skyblue;
+        text-align: center;
+      }
+      & svg {
+        width: 22px;
+        height: 22px;
+        & .st0 {
+          fill: none;
+          stroke: #ffffff;
+          stroke-width: 2;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+        }
+      }
+    }
+    &-content {
+      background: $black;
+      padding: 30px 40px;
+      padding-right: 50px;
+      padding-bottom: 60px;
+    }
+    &-text {
+      & h4 {
+        font-size: 26px;
+      }
+      & p {
+        color: $e-text-4;
+        margin-bottom: 0;
+      }
+    }
+  }
 }
 
 .testimonial__nav-thumb img {
-    width: 70px;
-    height: 70px;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
 }
 .testimonial__nav-thumb::after {
-    border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+@keyframes float {
+  0% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
+  50% {
+    box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+    transform: translatey(-20px);
+  }
+  100% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
 }

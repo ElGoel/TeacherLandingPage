@@ -214,7 +214,10 @@
             }
         }
     }
-
+    &__divition{
+        height: 10px;
+        background-color: red;
+    }
     &__background {
         position: absolute;
         bottom: 0;
