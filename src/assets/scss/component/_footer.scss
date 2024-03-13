@@ -6,6 +6,12 @@
 
 
 .footer{
+    &__logo {
+
+        &-img {
+            width: 150px;
+        }
+    }
     &__widget{
         &-title{
             padding-top: 5px;
@@ -223,7 +229,7 @@
         bottom: 0;
         left: 0;
         width: 100%;
-        height: 50%;
+        height: 90%;
         z-index: -1;
     }
 }

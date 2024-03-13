@@ -1,8 +1,8 @@
 <template>
     <div v-for="(item, index) in items" :key="index" class="why__content-item">
-        <div @click="showItem(index)" class="why__content-title d-flex align-items-center justify-content-end gap-2">
-            <h4>{{ item.title }}</h4>
+        <div @click="showItem(index)" class="why__content-title d-flex align-items-center justify-content-start gap-2">
             <i class="fas" :class="isItemShow === index ? 'fa-minus' : 'fa-plus'"></i>
+            <h4>{{ item.title }}</h4>
         </div>
         <div v-show="isItemShow === index">
             <hr>

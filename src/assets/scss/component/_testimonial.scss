@@ -17,15 +17,6 @@
     }
   }
   &__container {
-    background: linear-gradient(
-      45deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(232, 228, 255, 0) 5%,
-      rgba(110, 85, 255, 1) 50%,
-      rgba(235, 231, 255, 0) 95%,
-      rgba(255, 255, 255, 0) 100%
-    );
-    border-radius: 5rem;
     width: 60%;
     @media #{$md} {
       width: 100%;
@@ -38,11 +29,6 @@
     }
   }
   &__slider {
-    background-color: $white;
-    border-radius: inherit;
-    border: 3px solid transparent;
-    background-clip: padding-box;
-    padding: 1.5rem 0rem;
     & .swiper-nav {
       & i {
         display: inline-block;

@@ -1,6 +1,7 @@
 
 @use 'component/common';
 @use 'component/mobileNav';
+@use 'component/subscribe';
 @use 'component/modal';
 @use 'component/header';
 @use 'component/hero';
@@ -26,4 +27,3 @@
 @use 'component/error';
 @use 'component/login';
 @use 'component/footer';
-@use 'rtl';

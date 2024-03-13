@@ -9,6 +9,40 @@
          <div class="hero__content-wrapper">
             <img class="hero-purple" src="../../assets/img/hero/hero-2/hero2.svg" alt="">
             <div class="hero__content-flex">
+               <div class="right-col d-flex align-items-center">
+                  <div class="hero__content hero__content-2 p-relative z-index-1 text-start">
+                     <h3 class="hero__title hero__title-2">
+                        Lleva Tu Ingles <br> Al
+                        <span class="yellow-shape">Siguiente
+                        </span>
+                        Nivel
+                     </h3>
+                     <h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit. A ipsam animi dolorem numquam! Nihil
+                        molestiae quae repellat, rerum iusto ex.</h4>
+                     <div class="hero__button d-flex  align-items-center justify-content-start">
+                        <!-- <form action="#">
+                           <div class="hero__search-input mb-10">
+                              <input type="text" placeholder="What do you want to learn?">
+                              <button type="submit"><i class="fad fa-search"></i></button>
+                           </div>
+                        </form> -->
+                        <div class="header__btn header__btn-2">
+                           <button class="header__btn-register hero__button-demo"
+                              @mousemove="(e) => { $emit('HandleMouseMove', e) }">
+                              Pide tu clase gratis!
+                           </button>
+                        </div>
+                        <div class="hero__button-video d-flex gap-1 align-items-center ">
+                           <button @click="handleVideoPlay" class="hero__button-circle-1">
+                              <div class="hero__button-circle-2">
+                                 <div class="hero__button-circle-3"><img class="hero__button-play"
+                                       src="../../assets/img/icon/hero/playButton.svg" alt="Boton Play"></div>
+                              </div>
+                           </button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
                <div class="d-none d-md-block left-col p-relative">
                   <div class="hero__promotion d-none d-sm-flex white-bg layer" data-depth="0.1">
                      <div class="hero__promotion-icon inspiration mr-10">
@@ -79,44 +113,12 @@
                      </span>
                   </div>
                </div>
-               <div class="right-col d-flex align-items-center">
-                  <div class="hero__content hero__content-2 p-relative z-index-1 text-start">
-                     <h3 class="hero__title hero__title-2">
-                        Lleva Tu Ingles <br> Al
-                        <span class="yellow-shape">Siguiente
-                        </span>
-                        Nivel
-                     </h3>
-                     <h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit. A ipsam animi dolorem numquam! Nihil
-                        molestiae quae repellat, rerum iusto ex.</h4>
-
-                     <div class="hero__button d-flex  align-items-center justify-content-end">
-                        <!-- <form action="#">
-                           <div class="hero__search-input mb-10">
-                              <input type="text" placeholder="What do you want to learn?">
-                              <button type="submit"><i class="fad fa-search"></i></button>
-                           </div>
-                        </form> -->
-                        <div class="hero__button-video d-flex gap-1 align-items-center ">
-                           <p class="text-decoration-underline d-none d-sm-block">Mas de mi</p>
-                           <button class="hero__button-circle-1">
-                              <div class="hero__button-circle-2">
-                                 <div class="hero__button-circle-3"><img class="hero__button-play"
-                                       src="../../assets/img/icon/hero/playButton.svg" alt="Boton Play"></div>
-                              </div>
-                           </button>
-                        </div>
-                        <div class="header__btn header__btn-2">
-                           <button class="header__btn-register hero__button-demo"
-                              @mousemove="(e) => { $emit('HandleMouseMove', e) }">
-                              !Pide tu clase gratis
-                           </button>
-                        </div>
-                     </div>
-                  </div>
-               </div>
             </div>
          </div>
+      </div>
+      <div @click="handleVideoClose" :class="[showVideo ? 'body-overlay opened' : 'body-overlay']">
+         <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=0&controls=0">
+         </iframe>
       </div>
    </section>
 </template>
@@ -124,10 +126,13 @@
 <script setup>
 import { ref, /* onMounted */ } from 'vue';
 
-const count = ref(0);
+const showVideo = ref(false);
 
-console.log(count.value);
+const handleVideoPlay = () => {
+   showVideo.value = true;
+};
+const handleVideoClose = () => {
+   showVideo.value = false;
+};
 
 </script>
-
-

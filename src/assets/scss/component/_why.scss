@@ -86,13 +86,14 @@
     }
     &-info {
       display: flex;
+      align-items: start;
       flex-direction: column;
       margin-bottom: 2rem;
       gap: 1.5rem;
     }
     &-item {
       cursor: pointer;
-      text-align: end;
+      text-align: start;
       hr {
         margin: .5rem 0rem;
       }

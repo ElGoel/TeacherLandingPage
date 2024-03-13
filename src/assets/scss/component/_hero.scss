@@ -36,6 +36,10 @@
       align-items: end;
       padding-bottom: 12rem;
     }
+    & iframe {
+      width: 40%;
+      height: 400px;
+    }
   }
 
   &__title {
@@ -85,7 +89,7 @@
   }
   &__content {
     &-wrapper {
-      margin-top: 90px !important;
+      margin-top: 0px !important;
       @media #{$lg} {
         margin-top: 0px !important;
       }
@@ -330,6 +334,9 @@
       justify-content: center !important;
       gap: 1rem;
     }
+    @media #{$md} {
+      gap: 1rem;
+    }
     &-video {
       @media #{$md} {
         flex-direction: column;
@@ -350,6 +357,8 @@
       top: 50%;
       left: 50%;
       width: 25px;
+      transition: transform .5s;
+      
     }
     &-circle {
       &-1 {
@@ -361,6 +370,7 @@
         border: 2px solid rgba(255, 255, 255, 0.1);
         border-radius: 50%;
         animation: hero-buttom-circle-1 0.4s linear infinite alternate;
+        transition: transform .5s;
         &:hover {
           transform: scale(1.1);
         }
@@ -406,6 +416,9 @@
     }
     &-demo {
       padding: 1rem 1.4rem;
+      @media #{$md} {
+        padding: 2rem .9rem !important;
+      }
       border-radius: 15px;
       color: $e-blue-7;
       font-size: 1.2rem;
@@ -419,30 +432,30 @@
   &__stadistics {
     position: absolute;
     bottom: auto !important;
-    top: 43% !important;
+    top: 34% !important;
     right: 50%;
     width: 588px;
     column-gap: 1.5rem;
     animation: fadeInUp 1s ease-in-out;
     @media #{$md} {
-      top: 30% !important;
+      top: 25% !important;
       right: 38%;
       width: 450px;
     }
     @media #{$sm} {
-      left: 50% !important;
+      right: 50% !important;
       transform: translate(50%, -50%);
-      top: 45% !important;
+      top: 36% !important;
     }
     @media #{$xs} {
-      left: 50% !important;
+      right: 50% !important;
       transform: translate(50%, -50%);
-      top: 37% !important;
+      top: 38% !important;
       column-gap: .5rem;
       width: 95%;
     }
     @media #{$lg} {
-      top: 45% !important;
+      top: 35% !important;
       width: 468px;
     }
     @media #{$xl} {
@@ -463,26 +476,17 @@
     @media #{$md} {
       padding: 10px 5px;
     }
-    &-1 {
+    &-3 {
       -webkit-animation: hero-bounce 1s 1 3s;
       animation: hero-bounce 1s 1 3s;
-      & h5 {
-        color: #ff8e28;
-      }
     }
     &-2 {
       -webkit-animation: hero-bounce 1s 1 2s;
       animation: hero-bounce 1s 1 2s;
-      & h5 {
-        color: #3ccca6;
-      }
     }
-    &-3 {
+    &-1 {
       -webkit-animation: hero-bounce 1s 1 1s;
       animation: hero-bounce 1s 1 1s;
-      & h5 {
-        color: #9da7f9;
-      }
     }
     &-icon {
       & span {
@@ -549,7 +553,7 @@
         line-height: 36px;
         @include border-radius(50%);
         background: #ff7921;
-        & svg {
+        & svg, img {
           height: 24px;
           fill: $white;
         }
@@ -572,16 +576,17 @@
   }
   &__class {
     position: absolute;
-    top: auto !important;
-    left: 54% !important;
+    top: auto;
+    left: 54%;
     bottom: -50%;
     @include box-shadow(0px 30px 60px 0px rgba(1, 11, 60, 0.14));
     background: rgba($color: $white, $alpha: 0.9);
     @include border-radius(4px);
     padding: 20px;
     @media #{$lg} {
-      right: 1%;
-      bottom: 15%;
+      top: auto;
+      left: 40%;
+      bottom: -30%;
     }
     &-thumb {
       & img {
@@ -622,6 +627,10 @@
     animation-fill-mode: both;
     animation-iteration-count: infinite;
     animation-name: hero-bounce;
+    @media #{$md} {
+      top: 5%;
+      right: 10%;
+    }
     & span {
       display: inline-block;
       width: 50px;

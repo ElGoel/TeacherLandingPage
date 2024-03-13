@@ -4,8 +4,44 @@
       :class="`${isSticky ? 'header__area header__transparent header__padding-2 sticky' : `${headerShadow ? headerShadow : 'header__area header__transparent header__padding-2'}`}`">
       <div class="container">
         <div class="row align-items-center">
+          <div class="col-xxl-9 col-xl-9 col-lg-8 col-md-10 col-sm-8 col-6">
+            <div class="header__right d-flex align-items-center">
+              <div class="logo">
+                <a href="/">
+                  <img class="header__right-title" :src="`${isSticky ? require('../../assets/img/logo/logo-3.png') : require('../../assets/img/logo/logo.png')}`"/>
+                </a>
+              </div>
+              <div class="main-menu main-menu-2">
+                <nav id="mobile-menu" class="d-none d-md-block header__nav">
+                  <ul class="d-flex header__nav-links">
+                    <li><a @click.prevent="scrollToTarget('home')" href="#home">Home</a></li>
+                    <li>
+                      <a @click.prevent="scrollToTarget('course')" href="#course">Cursos</a>
+                    </li>
+                    <li>
+                      <a @click.prevent="scrollToTarget('about')" href="#about">About</a>
+                    </li>
+                    <li class="has-dropdown">
+                      <ul class="submenu">
+                        <li><a href="/blog">Blog</a></li>
+                        <li><a href="/blog-details">Blog Details</a></li>
+                      </ul>
+                      <a @click.prevent="scrollToTarget('blog')" href="#blog">Blog</a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+              <div class="sidebar__menu sidebar__left d-lg-none">
+                <div @click="handleSidebar" class="sidebar-toggle-btn ml-30" id="sidebar-toggle">
+                  <span class="line"></span>
+                  <span class="line"></span>
+                  <span class="line"></span>
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-2 col-sm-4 col-6">
-            <div class="header__left d-flex">
+            <div class="header__left d-flex justify-content-end">
               <div class="sidebar__menu d-sm-none d-block">
                 <div @click="handleSidebar" class="sidebar-toggle-btn ml-30" id="sidebar-toggle">
                   <span class="line"></span>
@@ -14,43 +50,8 @@
                 </div>
               </div>
               <div class="header__btn header__btn-2 d-none d-sm-block">
-                <a href="#" @mousemove="(e) => { $emit('handleMouseMove', e) }" class="header__btn-register">Contacto</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-xxl-9 col-xl-9 col-lg-8 col-md-10 col-sm-8 col-6">
-            <div class="header__right d-flex align-items-center">
-              <div class="main-menu main-menu-2">
-                <nav id="mobile-menu" class="d-none d-lg-block header__nav">
-                  <ul class="d-flex header__nav-links">
-                    <li class="has-dropdown">
-                      <ul class="submenu">
-                        <li><a href="/blog">Blog</a></li>
-                        <li><a href="/blog-details">Blog Details</a></li>
-                      </ul>
-                      <a href="/blog">Blog</a>
-                    </li>
-                    <li>
-                      <a href="#">Cursos</a>
-                    </li>
-                    <li>
-                      <a href="/courses">About</a>
-                    </li>
-                    <li><a href="/">Home</a></li>
-                  </ul>
-                </nav>
-              </div>
-              <div class="logo">
-                <a href="/">
-                  <h1 class="header__right-title">.NiaTips</h1>
-                </a>
-              </div>
-              <div class="sidebar__menu sidebar__left d-lg-none">
-                <div @click="handleSidebar" class="sidebar-toggle-btn ml-30" id="sidebar-toggle">
-                  <span class="line"></span>
-                  <span class="line"></span>
-                  <span class="line"></span>
-                </div>
+                <a @click.prevent="scrollToTarget('contact')" href="#contact" @mousemove="(e) => { $emit('handleMouseMove', e) }"
+                  class="header__btn-register">Contacto</a>
               </div>
             </div>
           </div>
@@ -71,15 +72,14 @@
       <div class="sidebar__content">
         <div class="logo mb-40">
           <a href="/">
-            <img src="../../assets/img/logo/logo.png" alt="logo">
+            <img class="sidebar__content-logo" src="../../assets/img/logo/logo-3.png" alt="logo">
           </a>
         </div>
 
         <div class="side-info-content sidebar-menu mm-menu">
 
           <ul>
-            <li class="menu-item-has-children"
-              v-bind:class="[menuOption.homeDropdown === true ? 'active' : '']">
+            <li class="menu-item-has-children" v-bind:class="[menuOption.homeDropdown === true ? 'active' : '']">
               <a @click="menuOption.homeDropdown = !menuOption.homeDropdown">Home</a>
             </li>
 
@@ -88,7 +88,8 @@
               <a>Courses</a>
             </li>
 
-            <li class="menu-item-has-children has-droupdown" :class="[menuOption.blogDropdown === true ? 'active' : '']">
+            <li class="menu-item-has-children has-droupdown"
+              :class="[menuOption.blogDropdown === true ? 'active' : '']">
 
               <a v-on:click="menuOption.blogDropdown = !menuOption.blogDropdown">Blog</a>
               <ul class="sub-menu" :class="[menuOption.blogDropdown === true ? 'active' : '',]">
@@ -103,10 +104,6 @@
             <li class="menu-item-has-children">
               <a>About</a>
             </li>
-            <li>
-              <a href="#" class="border-0">Contact</a>
-            </li>
-
           </ul>
         </div>
 
@@ -154,7 +151,36 @@ export default {
         this.isSticky = false;
       }
     },
+    scrollToTarget(targetId, duration = 1000) {
+      const targetElement = document.getElementById(targetId);
+      if (!targetElement) {
+        console.error(`Element with ID "${targetId}" not found.`);
+        return;
+      }
 
+      const start = window.scrollY;
+      const target = targetElement.offsetTop;
+      const distance = target - start;
+      const startTime = performance.now();
+
+      function easeInOutQuad(t) {
+        return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+      }
+
+      function scrollStep(timestamp) {
+        const currentTime = timestamp - startTime;
+        const progress = Math.min(currentTime / duration, 1);
+        const easedProgress = easeInOutQuad(progress);
+        const newPosition = start + distance * easedProgress;
+        window.scrollTo(0, newPosition);
+
+        if (currentTime < duration) {
+          requestAnimationFrame(scrollStep);
+        }
+      }
+
+      requestAnimationFrame(scrollStep);
+    },
     handleSidebar() {
       this.showSidebar = true;
     },
@@ -163,7 +189,7 @@ export default {
     },
   },
   mounted() {
-    window.addEventListener('scroll', this.handleSticky)
+    window.addEventListener("scroll", this.handleSticky);
   },
 };
 </script>

@@ -6,12 +6,11 @@
             quod numquam </p>
       </div>
       <div class="container d-flex justify-content-center align-item-center">
-         <div class="col-xxl-12 testimonial__container">
+         <div class="col-xxl-12 rotating-border-testimonials rotating-border--card testimonial__container">
             <div class="testimonial__slider">
                <swiper ref="mySwiper" :modules="modules" :autoplay="{
                   delay: 2500,
                   disableOnInteraction: false,
-                  reverseDirection: true,
                }" :loop="true" :navigation="{
                   nextEl: '.swiper-button-next',
                   prevEl: '.swiper-button-prev'
@@ -60,12 +59,11 @@
                         </div>
                      </div>
                   </swiper-slide>
-
                   <div class="swiper-button-next swiper-nav">
-                     <i class="far fa-arrow-left"></i>
+                     <i class="far fa-arrow-right"></i>
                   </div>
                   <div class="swiper-button-prev swiper-nav">
-                     <i class="far fa-arrow-right"></i>
+                     <i class="far fa-arrow-left"></i>
                   </div>
                </swiper>
             </div>

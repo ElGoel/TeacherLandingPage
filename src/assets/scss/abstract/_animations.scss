@@ -1,0 +1,29 @@
+// $scroll-duration: 1.5s; // Duración total de la animación
+// $scroll-easing: cubic-bezier(0.25, 0.1, 0.25, 1); // Curva de la animación
+
+// $scroll-start-speed: 0.2; // Velocidad inicial del scroll
+// $scroll-end-speed: 0.8; // Velocidad final del scroll
+
+// @mixin scroll-to($target) {
+//   scroll-behavior: smooth;
+//   -webkit-scroll-behavior: smooth;
+
+//   transition: scroll-top $scroll-duration $scroll-easing;
+
+//   @media (prefers-reduced-motion: no-preference) {
+//     scroll-top: calc(#{to-rem($target.offsetTop)} - #{to-rem($header-height)});
+
+//     &.scrolling {
+//       scroll-behavior: auto;
+//       -webkit-scroll-behavior: auto;
+
+//       transition: scroll-top $scroll-duration $scroll-easing;
+
+//       scroll-top: calc(
+//         #{to-rem($target.offsetTop)} - #{to-rem($header-height)} - #{to-rem(
+//             $scroll-start-speed * $scroll-duration * 100
+//           )} + #{to-rem($scroll-end-speed * $scroll-duration * 100)}
+//       );
+//     }
+//   }
+// }

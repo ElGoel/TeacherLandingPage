@@ -1,5 +1,5 @@
 <template>
-    <section class="blog__area pt-115 pb-130">
+    <section id="blog" class="blog__area pt-115 pb-130">
         <div class="container blog__area-container">
             <div class="row">
                 <div class="col-xxl-6 offset-xxl-3">

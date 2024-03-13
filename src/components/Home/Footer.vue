@@ -1,15 +1,15 @@
 <template>
- <footer>
+ <footer id="footer">
    <div :class="`footer__area`">
-      <div :class="`footer__top ${footerPadding ? 'pt-90' : 'pt-190'} pb-40`">
+      <div :class="`footer__top ${footerPadding ? 'pt-70' : 'pt-190'} pb-40`">
          <div class="container">
-            <div class="row">
+            <div class="row justify-content-center">
                <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-6">
                   <div class="footer__widget mb-50">
                      <div class="footer__widget-head mb-22">
                         <div class="footer__logo">
                            <a href="/">
-                              <img :src="`${footerBgTwo ? require('../../assets/img/logo/logo.png') : require('../../assets/img/logo/logo-2.png')}`" alt="">
+                              <img class="footer__logo-img" :src="`${footerBgTwo ? require('../../assets/img/logo/logo.png') : require('../../assets/img/logo/logo-2.png')}`" alt="">
                            </a>
                         </div>
                      </div>
@@ -35,12 +35,9 @@
                         <div :class="`${footerBgTwo ? 'footer__link-2' : 'footer__link'}`">
                            <ul>
                               <li><a href="#">About</a></li>
-                              <li><a href="#">Courses</a></li>
-                              <li><a href="#">Events</a></li>
                               <li><a href="#">Instructor</a></li>
-                              <li><a href="#">Career</a></li>
-                              <li><a href="#">Become a Teacher</a></li>
-                              <li><a href="#">Contact</a></li>
+                              <li><a href="#">Why learn english?</a></li>
+                              <li><a href="#">Testimonials</a></li>
                            </ul>
                         </div>
                      </div>
@@ -49,39 +46,45 @@
                <div class="col-xxl-2 col-xl-2 col-lg-2 offset-lg-0 col-md-3 offset-md-1 col-sm-6">
                   <div class="footer__widget mb-50">
                      <div class="footer__widget-head mb-22">
-                        <h3 :class="`${footerBgTwo ? 'footer__widget-title-2' : 'footer__widget-title'}`">Platform</h3>
+                        <h3 :class="`${footerBgTwo ? 'footer__widget-title-2' : 'footer__widget-title'}`">Support</h3>
                      </div>
                      <div class="footer__widget-body">
                         <div :class="`${footerBgTwo ? 'footer__link-2' : 'footer__link'}`">
                            <ul>
-                              <li><a href="#">Browse Library</a></li>
-                              <li><a href="#">Library</a></li>
-                              <li><a href="#">Partners</a></li>
-                              <li><a href="#">News & Blogs</a></li>
-                              <li><a href="#">FAQs</a></li>
-                              <li><a href="#">Tutorials</a></li>
+                              <li><a href="#">Help Center</a></li>
+                              <li><a href="#">Tweet @ Us</a></li>
+                              <li><a href="#">Feedback</a></li>
                            </ul>
                         </div>
                      </div>
                   </div>
                </div>
-               <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-5 col-sm-6">
-                  <div class="footer__widget footer__pl-70 mb-50">
+               <div class="col-xxl-2 col-xl-2 col-lg-2 offset-lg-0 col-md-3 offset-md-1 col-sm-6">
+                  <div class="footer__widget mb-50">
                      <div class="footer__widget-head mb-22">
-                        <h3 :class="`${footerBgTwo ? 'footer__widget-title-2' : 'footer__widget-title'}`">Subscribe</h3>
+                        <h3 :class="`${footerBgTwo ? 'footer__widget-title-2' : 'footer__widget-title'}`">Links</h3>
                      </div>
                      <div class="footer__widget-body">
-                        <div :class="`${footerBgTwo ? 'footer__subscribe-2' : 'footer__subscribe'}`">
-                           <form action="#">
-                              <div class="footer__subscribe-input mb-15">
-                                 <input type="email" placeholder="Your email address">
-                                 <button type="submit">
-                                    <i class="far fa-arrow-right"></i>
-                                    <i class="far fa-arrow-right"></i>
-                                 </button>
-                              </div>
-                           </form>
-                           <p>Get the latest news and updates right at your inbox.</p>
+                        <div :class="`${footerBgTwo ? 'footer__link-2' : 'footer__link'}`">
+                           <ul>
+                              <li><a href="#">Courses</a></li>
+                              <li><a href="#">Blog</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xxl-2 col-xl-2 col-lg-2 offset-lg-0 col-md-3 offset-md-1 col-sm-6">
+                  <div class="footer__widget mb-50">
+                     <div class="footer__widget-head mb-22">
+                        <h3 :class="`${footerBgTwo ? 'footer__widget-title-2' : 'footer__widget-title'}`">Contact Me</h3>
+                     </div>
+                     <div class="footer__widget-body">
+                        <div :class="`${footerBgTwo ? 'footer__link-2' : 'footer__link'}`">
+                           <ul>
+                              <li><a href="#">+57 310 8057265</a></li>
+                              <li><a href="#">support@niatips.com</a></li>
+                           </ul>
                         </div>
                      </div>
                   </div>
@@ -94,7 +97,7 @@
             <div class="row">
                <div class="col-xxl-12">
                   <div :class="`${footerBgTwo ? 'footer__copyright-2 text-center' : 'footer__copyright text-center'}`">
-                     <p>© 2022 Educal, All Rights Reserved. Design By <a href="/">Theme Pure</a></p>
+                     <p>© 2024 NiaTips, All Rights Reserved. Developer By: <a href="/">ang.dev</a></p>
                   </div>
                </div>
             </div>
@@ -109,7 +112,7 @@ export default {
    name:'FooterArea',
    props:{
       footerBgTwo:String,
-      footerPadding:String,
+      footerPadding:Boolean,
    }
 };
 </script>

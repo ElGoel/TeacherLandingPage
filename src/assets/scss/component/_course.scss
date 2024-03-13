@@ -5,21 +5,8 @@
 /*----------------------------------------*/
 
 .course {
-  &__bg {
-    z-index: -1;
-    margin: $border; /* !importanté */
-    border-radius: 2em; /* !importanté */
-    background: linear-gradient(45deg, rgba(255,255,255,0) 0%, rgba(232,228,255,0) 5%, rgba(110,85,255,1) 50%, rgba(235,231,255,0) 95%, rgba(255,255,255,0) 100%);
-  }
   &__item {
-    @include border-radius(6px);
     @include box-shadow(0px 30px 40px 0px rgba(1, 11, 60, 0.06));
-    $border: 5px;
-    position: relative;
-    background-clip: padding-box; /* !importanté */
-    border: solid 3px transparent; /* !importanté */
-    border-radius: inherit;
-    padding: 5px;
     &-3 {
       @include box-shadow(none);
       & .course__more {
@@ -35,6 +22,7 @@
       & .course__thumb {
         & img {
           @include transform(scale(1.1));
+          transition: transform .5s ease-in-out;
         }
       }
     }
@@ -49,7 +37,7 @@
     }
   }
   &__thumb {
-    border-radius: 25px;
+    border-radius: 1.2em !important;
     &-list {
       @media #{$lg} {
         height: 100%;
@@ -61,7 +49,7 @@
       }
     }
     & img {
-        border-radius: 1.5em !important;
+        border-radius: 1.2em !important;
     }
   }
   &__tag {
@@ -398,6 +386,8 @@
     padding: 10px 30px;
     padding-top: 15px;
     border-top: 1px solid $border-2;
+    display: flex;
+    align-items: center;
     &-2 {
       position: absolute;
       left: 0;
@@ -422,6 +412,7 @@
     }
   }
   &__btn {
+    display: flex;
     & .link-btn {
       color: $body-text-color;
       &:hover {

@@ -1,0 +1,102 @@
+@use '../abstract' as *;
+
+/*----------------------------------------*/
+/*  00. SUBSCRIBE CSS START
+/*----------------------------------------*/
+
+.contact {
+  &__container {
+    background: linear-gradient(
+      0deg,
+      rgba(186, 174, 255, 0) 30%,
+      rgba(96, 68, 255, 1) 100%
+    );
+    padding: 5rem 1rem;
+    border-radius: 50px;
+    position: relative;
+    &::before {
+      content: '';
+      width: 100%;
+      position: absolute;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: #ffffff;
+      border-radius: inherit;
+      border: 3px solid transparent;
+      background-clip: padding-box;
+      padding: 1.5rem 0rem;
+    }
+  }
+  &__widget {
+    z-index: 10;
+    width: 100%;
+    &-body {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  &__subscribe {
+    position: relative;
+    &-input {
+      background-color: lighten($e-text-5, 25);
+      padding: 0.2rem;
+      border: 1px solid $e-blue-2;
+      border-radius: 20px;
+      & input {
+        background-color: transparent;
+        border: none;
+        width: 400px;
+        text-align: start;
+        height: 74px;
+        padding: 0.5rem 2rem;
+        -webkit-transition: width 0.35s ease-in-out;
+        transition: width 0.35s ease-in-out;
+        @media #{$xs} {
+          width: 300px;
+        }
+        &::placeholder {
+          color: lighten($e-blue-7, 20);
+          opacity: 1;
+        }
+
+        &::-ms-input-placeholder {
+          color: lighten($e-blue-7, 20);
+        }
+        @media #{$lg} {
+          &:focus {
+            outline: none;
+            width: 500px;
+          } 
+        }
+        @media #{$xl} {
+          &:focus {
+            outline: none;
+            width: 500px;
+          } 
+        }
+        @media #{$xxl} {
+          &:focus {
+            outline: none;
+            width: 500px;
+          } 
+        }
+      }
+      & .btn-submit {
+        position: absolute;
+        background: linear-gradient(
+          180deg,
+          rgba(186, 174, 255, 1) 0%,
+          rgba(96, 68, 255, 1) 100%
+        );
+        right: 4px;
+        padding: 1.5rem 2rem;
+        color: $white;
+        font-weight: 700;
+        border-radius: inherit;
+        cursor: pointer;
+        z-index: 99;
+      }
+    }
+  }
+}
