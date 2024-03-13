@@ -3,7 +3,7 @@
    <div :class="`footer__area`">
       <div :class="`footer__top ${footerPadding ? 'pt-70' : 'pt-190'} pb-40`">
          <div class="container">
-            <div class="row justify-content-center">
+            <div class="row justify-content-center footer__content">
                <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-6">
                   <div class="footer__widget mb-50">
                      <div class="footer__widget-head mb-22">

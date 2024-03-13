@@ -39,6 +39,18 @@
     & iframe {
       width: 40%;
       height: 400px;
+      @media #{$lg} {
+        width: 60%;
+      }
+      @media #{$md} {
+        width: 70%;
+      }
+      @media #{$sm} {
+        width: 80%;
+      }
+      @media #{$xs} {
+        width: 100%;
+      }
     }
   }
 
