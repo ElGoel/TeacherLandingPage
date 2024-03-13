@@ -1,7 +1,12 @@
 {
-  "name": "educal",
+  "name": "niatips",
   "version": "0.1.0",
+  "author": "Ángelo Colmenares <angelocolmanu@gmail.com>",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ElGoel/TeacherLandingPage"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
