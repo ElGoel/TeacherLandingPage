@@ -1,5 +1,4 @@
 import { createWebHistory, createRouter } from 'vue-router';
-import Home from '../pages/Home.vue';
 import Courses from '../pages/Courses.vue';
 import CoursesList from '../pages/CoursesList.vue';
 import CourseSidebar from '../pages/CourseSidebar.vue';
@@ -18,7 +17,12 @@ const router = createRouter({
     {
       path: '/',
       name: 'Home',
-      component: Home
+      component: () =>
+        import(
+          /* webpackPrefetch: true */
+          /* webpackPreload: true */
+          '../pages/Home.vue'
+        )
     },
     {
       path: '/courses',

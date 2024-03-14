@@ -112,7 +112,7 @@ export default {
    name:'FooterArea',
    props:{
       footerBgTwo:String,
-      footerPadding:Boolean,
+      footerPadding:String,
    }
 };
 </script>

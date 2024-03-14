@@ -117,7 +117,7 @@
          </div>
       </div>
       <div @click="handleVideoClose" :class="[showVideo ? 'body-overlay opened' : 'body-overlay']">
-         <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=0&controls=0">
+         <iframe v-if="showVideo" :src="`https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=${showVideo ? '1' : '0'}&controls=0`">
          </iframe>
       </div>
    </section>

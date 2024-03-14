@@ -850,6 +850,15 @@ p {
     position: absolute;
     left: -20%;
     top: -100%;
+    @media #{$lg} {
+      top: -50%;
+    }
+    @media #{$sm} {
+      top: -35%;
+    }
+    @media #{$xs} {
+      top: -20%;
+    }
     border-radius: 100%;
     z-index: -2;
     animation: spin 3s linear infinite;

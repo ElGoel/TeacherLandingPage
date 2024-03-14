@@ -10,7 +10,7 @@
                      <div class="blog__wrapper">
                         <div class="blog__item white-bg mb-30 transition-3 fix">
                            <div class="blog__thumb w-img fix">
-                              <a :href="`/blog-details/${blog.id}`">
+                              <a href="#">
                                  <img :src="blog.blogImg" alt="">
                               </a>
                            </div>
@@ -19,7 +19,7 @@
                                  <a href="#" :class="blog.color">{{blog.category}}</a>
                               </div>
                               <h3 class="blog__title">
-                                 <a :href="`/blog-details/${blog.id}`">
+                                 <a href="#">
                                  {{blog.title}}</a>
                               </h3>
    

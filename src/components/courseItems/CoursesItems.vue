@@ -5,7 +5,7 @@
             class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 grid-item">
             <div class="course__item rotating-border-card rotating-border rotating-border--card">
                <div class="course__thumb w-img p-relative fix">
-                  <a :href="`/course-details/${course.id}`">
+                  <a href="#">
                      <img :src="course.courseImage" alt="">
                   </a>
                   <!-- <div class="course__tag">
@@ -22,7 +22,7 @@
                      </div>
                   </div>
                   <h3 class="course__title">
-                     <a :href="`/course-details/${course.id}`">{{ course.title }}</a>
+                     <a href="#">{{ course.title }}</a>
                   </h3>
                </div>
                <div class="course__more d-flex justify-content-between">
