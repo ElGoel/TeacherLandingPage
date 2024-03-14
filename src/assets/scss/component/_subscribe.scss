@@ -52,8 +52,16 @@
         padding: 0.5rem 2rem;
         -webkit-transition: width 0.35s ease-in-out;
         transition: width 0.35s ease-in-out;
+        &:focus {
+          outline: none;
+          width: 500px;
+        } 
         @media #{$xs} {
           width: 300px;
+          &:focus {
+            outline: none;
+            width: 300px;
+          } 
         }
         &::placeholder {
           color: lighten($e-blue-7, 20);
@@ -62,24 +70,6 @@
 
         &::-ms-input-placeholder {
           color: lighten($e-blue-7, 20);
-        }
-        @media #{$lg} {
-          &:focus {
-            outline: none;
-            width: 500px;
-          } 
-        }
-        @media #{$xl} {
-          &:focus {
-            outline: none;
-            width: 500px;
-          } 
-        }
-        @media #{$xxl} {
-          &:focus {
-            outline: none;
-            width: 500px;
-          } 
         }
       }
       & .btn-submit {
